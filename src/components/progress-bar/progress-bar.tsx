@@ -8,7 +8,7 @@ interface ProgressBarProps {
 
 export function ProgressBar({ progress, onCancel, error }: ProgressBarProps) {
   return (
-    <div className="w-[602px]">
+    <div className="w-full sm:w-[602px]">
       {/* Progress Label */}
       <div className="flex justify-between items-center mb-2">
         <span className="text-sm text-gray-300">

@@ -32,13 +32,10 @@ export function UploadModal({ onClose }: UploadModalProps) {
       return;
     }
 
-    // Clear any previous errors
     setError(null);
 
-    // Update state with the selected file
     setFile(selectedFile);
 
-    // Start upload process
     setIsUploadingFile(true);
     setUploadProgress(0);
 
@@ -58,7 +55,7 @@ export function UploadModal({ onClose }: UploadModalProps) {
       setTimeout(() => {
         setUploadProgress(100);
         setIsUploadingFile(false);
-      }, 5000); // Simulate final upload delay
+      }, 5000);
     } catch (err) {
       console.error("Error uploading file:", err);
       setError("Failed to upload the file.");
@@ -77,12 +74,9 @@ export function UploadModal({ onClose }: UploadModalProps) {
       return;
     }
 
-    const { movieId } = await uploadFile({ file, title });
+    await uploadFile({ file, title });
     setIsUploaded(true);
-    console.log("File uploaded successfully! File ID:", movieId);
   };
-
-  console.log({ isUploaded, isUploadingFile, uploadProgress });
 
   return (
     <div
@@ -152,7 +146,6 @@ export function UploadModal({ onClose }: UploadModalProps) {
                   onCancel={() => {
                     setIsUploadingFile(false);
                     setUploadProgress(0);
-                    console.log("Upload cancelled");
                   }}
                   error={error}
                 />

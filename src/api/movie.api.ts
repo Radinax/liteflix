@@ -16,7 +16,6 @@ export function useMoviesQuery() {
   });
 }
 export function useMovies() {
-  const { data, error, isFetching, isLoading } = useMoviesQuery();
-  console.log({ data, error, isFetching });
+  const { data, isLoading } = useMoviesQuery();
   return { data, isLoading };
 }

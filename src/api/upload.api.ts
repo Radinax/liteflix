@@ -1,5 +1,5 @@
 import { api } from "@/lib/http-client";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQueries, useQuery } from "@tanstack/react-query";
 
 interface BufferData {
   type: string; // e.g., "Buffer"
@@ -76,11 +76,31 @@ export function useUploadFile() {
         }
 
         const { movieId }: CreateMovieResponse = await movieResponse.json();
+
+        // Step 3: Save the uploaded file and title to localStorage
+        const storedData = JSON.parse(
+          localStorage.getItem("uploadedFiles") || "[]"
+        );
+        const newFileData = { title, fileId, movieId };
+        localStorage.setItem(
+          "uploadedFiles",
+          JSON.stringify([...storedData, newFileData])
+        );
+
         return { movieId };
       } catch (error) {
         console.error("Error during upload or movie creation:", error);
         throw new Error("Failed to complete the upload process");
       }
     },
+  });
+}
+
+export function useFetchFiles(fileIds: number[]) {
+  return useQueries({
+    queries: fileIds.map((fileId) => ({
+      queryKey: ["file", fileId],
+      queryFn: () => getFile({ id: String(fileId) }),
+    })),
   });
 }

@@ -14,14 +14,11 @@ const useUploadModal = () => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
       setSelectedFile(file);
-      console.log("Selected file:", file);
     }
   };
 
   const handleUpload = () => {
     if (selectedFile) {
-      // Perform the upload logic here (e.g., send the file to an API)
-      console.log("Uploading file:", selectedFile.name);
       setSelectedFile(null);
       closeModal();
     } else {
