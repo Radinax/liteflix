@@ -12,7 +12,7 @@ export function ProgressBar({ progress, onCancel, error }: ProgressBarProps) {
       {/* Progress Label */}
       <div className="flex justify-between items-center mb-2">
         <span className="text-sm text-gray-300">
-          {progress === 100 ? "100% CARGANDO" : `CARGANDO ${progress}%`}
+          {progress === 100 ? "100%" : `CARGANDO ${progress}%`}
         </span>
         {progress < 100 && (
           <button

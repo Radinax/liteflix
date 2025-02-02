@@ -67,7 +67,7 @@ export function useUploadFile() {
         const movieResponse = await api.post("movies", {
           json: {
             title,
-            fileId, // Link the movie to the uploaded file
+            fileId: String(fileId),
           },
         });
 
