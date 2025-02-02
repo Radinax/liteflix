@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# LITEFLIX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+API: https://github.com/Radinax/liteflix-api
 
-Currently, two official plugins are available:
+Web application where users can get the popular movies and upload their own.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Install
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+bun install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# To run
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+bun run dev
 ```
+
+# To test
+
+```bash
+bun run test
+```
+
+# Stack
+
+- [Vite](https://github.com/vitejs/vite): Build tooling for client side rendering apps
+- [Tailwind](https://github.com/tailwindlabs/tailwindcss): Most popular utility-first CSS framework for rapidly building custom user interfaces
+- [React Query](https://tanstack.com/query/latest): Server state management
+- [Ky](https://www.npmjs.com/package/ky): HTTP Client
+- [Bun](https://bun.sh/): Bundler, test runner, and Node.js-compatible package manager. NPM, PNPM, YARN are alternatives
+
+# File Structure
+
+Considering the scope of the application, a simple structure is the way to go here, for a larger app we could use a feature based structure instead, but for the purposes of this project, this is the way to go.
+
+```
+api
+  - All async operations to connect with the server
+assets
+  - Custom images and icons
+components
+  - All components
+hooks
+  - All hooks
+lib
+  - All configurations like query client and http client
+types
+  - All general types
+App.tsx
+```
+
+Made by **Eng. Adrian Beria**
