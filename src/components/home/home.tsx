@@ -59,7 +59,7 @@ export default function Home() {
 
   return (
     <div
-      className={`flex flex-col items-start bg-cover bg-center bg-no-repeat min-h-screen py-8 px-6 sm:px-28 transition-opacity duration-1000 will-change-opacity ${
+      className={`flex flex-col items-start bg-cover bg-center bg-no-repeat min-h-screen py-8 px-6 md:px-28 transition-opacity duration-1000 will-change-opacity ${
         isImageLoaded ? "opacity-100" : "opacity-0"
       }`}
       style={{
@@ -74,7 +74,7 @@ export default function Home() {
       }}
     >
       <Navbar />
-      <div className="flex flex-col flex-1 sm:flex-row items-center w-full mt-56 sm:mt-8 gap-20 sm:gap-0">
+      <div className="flex flex-col flex-1 md:flex-row items-center w-full mt-56 md:mt-8 gap-20 md:gap-0">
         {/* Left Section - Top Section on Mobile */}
         <div className="flex-1 sm:pr-8 h-full">
           <div className="text-lg">
