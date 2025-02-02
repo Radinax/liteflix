@@ -16,7 +16,7 @@ export function MovieList({ movies, myMovies }: MovieListProps) {
     useState<TypeOfMovieProps>("popular-movies");
 
   return (
-    <div className="w-[300px] sm:w-full min-h-[694px] flex-1 sm:flex-0 hover:cursor-pointer flex flex-col items-center">
+    <div className="w-[300px] sm:w-full min-h-[694px] flex-1 sm:flex-0 hover:cursor-pointer flex flex-col items-center fade-in">
       <div className="text-lg font-semibold mb-4 text-white flex flex-row items-center w-max">
         <span className="">Ver: </span>
         <Dropdown

@@ -9,3 +9,33 @@
   font-family: "bebas-neue";
   src: url("/src/assets/BebasNeue-Regular.ttf") format("ttf");
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px); /* Start slightly off-screen to the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Slide into its original position */
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 1s ease-in-out;
+}

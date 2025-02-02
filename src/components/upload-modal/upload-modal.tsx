@@ -15,11 +15,10 @@ export function UploadModal({ onClose }: UploadModalProps) {
   const [title, setTitle] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
   const [uploadProgress, setUploadProgress] = useState<number>(0);
-  const [isUploading, setIsUploading] = useState<boolean>(false); // Tracks overall upload process
+  const [isUploading, setIsUploading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Use the `useUploadFile` hook
-  const { mutateAsync: uploadFile } = useUploadFile(); // Tracks whether the file upload mutation is in progress
+  const { mutateAsync: uploadFile } = useUploadFile();
 
   const ref = useClickOutside<HTMLDivElement>(onClose!);
 
@@ -161,7 +160,7 @@ export function UploadModal({ onClose }: UploadModalProps) {
                   type="button"
                   variant="secondary"
                   onClick={handleFileUpload}
-                  disabled={isUploading || !file}
+                  disabled={isUploading || !file || !title}
                 >
                   SUBIR PELICULA
                 </Button>

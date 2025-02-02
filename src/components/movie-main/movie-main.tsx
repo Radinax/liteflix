@@ -11,7 +11,7 @@ interface MovieMainProps {
 export function MovieMain({ title }: MovieMainProps) {
   return (
     <div className="flex flex-col gap-14">
-      <div className="flex flex-col items-center sm:items-start">
+      <div className="flex flex-col items-center sm:items-start fade-in">
         <p className="text-white text-xl">
           ORIGINAL DE <span className="font-bold">LITEFLIX</span>
         </p>
@@ -20,7 +20,7 @@ export function MovieMain({ title }: MovieMainProps) {
         </p>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 slide-in-left">
         <Button icon={PlayIcon}>REPRODUCIR</Button>
         <Button icon={PlusIcon} variant="outline">
           MI LISTA

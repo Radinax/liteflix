@@ -24,7 +24,7 @@ export default function Navbar() {
   const { openModal, isModalOpen, closeModal } = useUploadModal();
 
   return (
-    <nav className="fixed top-0 left-0 w-full pt-8 px-6 sm:px-28 z-10">
+    <nav className="fixed top-0 left-0 w-full pt-8 px-6 sm:px-28 z-10 fade-in">
       {/* Semi-transparent overlay with blur */}
       <div className="absolute inset-0 bg-black/10 backdrop-blur-[1px] z-0"></div>
 
