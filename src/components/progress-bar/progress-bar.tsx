@@ -37,6 +37,10 @@ export function ProgressBar({ progress, onCancel, error }: ProgressBarProps) {
             "absolute top-0 left-0 h-3",
             error ? "bg-red-600" : "bg-title-primary"
           )}
+          role="progressbar" // Add this
+          aria-valuenow={progress} // Add this
+          aria-valuemin={0} // Add this
+          aria-valuemax={100} // Add this
           style={{
             width: `${progress}%`,
             transform: "translateY(-3px)",

@@ -29,6 +29,7 @@ bun run test
 - [React Query](https://tanstack.com/query/latest): Server state management
 - [Ky](https://www.npmjs.com/package/ky): HTTP Client
 - [Bun](https://bun.sh/): Bundler, test runner, and Node.js-compatible package manager. NPM, PNPM, YARN are alternatives
+- [Zod](https://github.com/colinhacks/zod): For typescript schema validations
 
 # File Structure
 
