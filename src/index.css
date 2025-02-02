@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@theme {
+  --color-primary: #242424;
+  --color-title-primary: #64eebc;
+  --font-bebas-neue: "bebas-neue";
+}
+
+@font-face {
+  font-family: "bebas-neue";
+  src: url("/src/assets/BebasNeue-Regular.ttf") format("ttf");
+}
