@@ -1,7 +1,7 @@
 import ky from "ky";
 
 export const api = ky.extend({
-  prefixUrl: "http://localhost:3000/",
+  prefixUrl: process.env.API_URL,
   credentials: "include",
   headers: {
     Accept: "application/json",
