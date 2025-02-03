@@ -6,14 +6,7 @@ import { MovieMain } from "@/components/movie-main/movie-main";
 import { useEffect, useState } from "react";
 import { useFetchFiles } from "@/api/upload.api";
 import { Movies } from "@/types/schema";
-
-const getUploadedFiles = (): {
-  title: string;
-  fileId: number;
-  movieId: number;
-}[] => {
-  return JSON.parse(localStorage.getItem("uploadedFiles") || "[]");
-};
+import { getUploadedFiles } from "@/components/utils/get-uploaded-files";
 
 export default function Home() {
   const { data, isLoading } = useMovies();

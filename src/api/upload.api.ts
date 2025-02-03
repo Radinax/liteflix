@@ -1,4 +1,5 @@
 import { api } from "@/lib/http-client";
+import { queryClient } from "@/lib/query-client";
 import { useMutation, useQueries, useQuery } from "@tanstack/react-query";
 
 interface BufferData {
@@ -87,11 +88,15 @@ export function useUploadFile() {
           JSON.stringify([...storedData, newFileData])
         );
 
-        return { movieId };
+        return { movieId, fileId };
       } catch (error) {
         console.error("Error during upload or movie creation:", error);
         throw new Error("Failed to complete the upload process");
       }
+    },
+    async onSuccess() {
+      // Invalidate all queries related to uploaded files
+      queryClient.invalidateQueries({ queryKey: ["file"] });
     },
   });
 }
