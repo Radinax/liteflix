@@ -1,7 +1,7 @@
 import ky from "ky";
 
 export const api = ky.extend({
-  prefixUrl: process.env.VITE_API_URL,
+  prefixUrl: import.meta.env.VITE_API_URL,
   credentials: "include",
   headers: {
     Accept: "application/json",
